@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <div id="app-2">
+        <span v-bind:title="message">
+          Наведи на меня курсор на пару секунд,
+          чтобы увидеть динамически связанное значение title!
+        </span>
+    </div>
+
+    <div id="app-3">
+        <span v-if="seen">Сейчас меня видно</span>
+    </div>
+
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+    <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Перевернуть сообщение</button>
+    </div>
+
+    <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
+    <ol id="component">
+        <!-- Создаём экземпляр компонента todo-item -->
+        <todo-item></todo-item>
+    </ol>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./js/main.js"></script>
+
+</html>
